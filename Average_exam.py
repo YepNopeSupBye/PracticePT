@@ -9,13 +9,16 @@ def get_scores():
         exam_scores.append(score)
     return exam_scores
 
-def calculate_average(scores):
+def calculate_average(scores_list):
     # Calculate the average score
-    total = sum(scores)
-    average = total / len(scores)
-    return average
+    sum = 0
+    for j in scores_list:
+        sum += j
+    average = sum / len(scores_list)
+    return float(average)
 
 # Call the get_scores function to get the exam scores
 scores_list = get_scores()
+print("Your Average score is " + str(calculate_average(scores_list)))
 
 
